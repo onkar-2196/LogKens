@@ -18,12 +18,14 @@ SIGNATURES = {
 
 
 
+
 LOG_PATTERN = re.compile(
     r'(?P<ip>\S+) \S+ \S+ '
     r'\[(?P<timestamp>[^\]]+)\] '
-    r'"(?P<method>[A-Z]+) (?P<path>\S+) [^"]+" '
+    r'"(?P<method>[A-Z]+) (?P<path>.*?) HTTP/\d(?:\.\d)?" '
     r'(?P<status>\d{3}) (?P<size>\S+)'
 )
+
 
 
 def parse_log(line):
