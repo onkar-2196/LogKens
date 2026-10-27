@@ -32,5 +32,15 @@
             "directory_traversal"
         ],
         "severity": "high"
+    },
+    {
+        "ip": "192.0.2.50",
+        "timestamp": "27/Oct/2026:20:45:00 +0530",
+        "method": "GET",
+        "path": "/search?q='",
+        "status": 200,
+        "size": "512",
+        "attacks": [],
+        "severity": "none"
     }
 ]

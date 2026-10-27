@@ -9,11 +9,14 @@ BASE_DIR = Path(__file__).resolve().parent
 SAMPLE_FILE = BASE_DIR / "sample.log"
 REPORT_FILE = BASE_DIR / "analysis_report.json"
 
-SIGNATURES = {
-    "sql_injection": r"(\bunion\s+select\b|'\s*or\s+1=1)",
+
+SIGNATURES = {    
+    "sql_injection": r"(\bunion\s+select\b|'\s*or\s+1=1|\bor\s+1=1)",
     "xss": r"(<script\b|javascript:)",
     "directory_traversal": r"(\.\./|\.\.\\)"
 }
+
+
 
 LOG_PATTERN = re.compile(
     r'(?P<ip>\S+) \S+ \S+ '
